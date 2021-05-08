@@ -1,11 +1,9 @@
 from behave import *
 from selenium import webdriver
 
-base_url = "http://localhost:8080/VALU3S"
-
 @given(u'producent user clicks on "Add new" -> "Organizations"')
 def step_impl(context):
-    context.driver.get("http://localhost:8080/VALU3S")
+    context.driver.get(f"{context.base_url}/organisations")
 
 @when(u'user enters required "Organizations" information')
 def step_impl(context):
