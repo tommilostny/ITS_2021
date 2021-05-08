@@ -1,9 +1,11 @@
 from behave import *
+from selenium import webdriver
+
+base_url = "http://localhost:8080/VALU3S"
 
 @given(u'producent user clicks on "Add new" -> "Organizations"')
 def step_impl(context):
-    raise NotImplementedError(u'STEP: Given producent user clicks on "Add new" -> "Organizations"')
-
+    context.driver.get("http://localhost:8080/VALU3S")
 
 @when(u'user enters required "Organizations" information')
 def step_impl(context):
