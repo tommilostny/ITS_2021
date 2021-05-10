@@ -4,7 +4,7 @@ Feature: Add pages
         Given producent user clicks on "Add new" -> "<page>"
         When user enters required "<page>" information
         And clicks on "Save" button
-        Then added "<page>" is visible on "<page>" list page
+        Then added "<page>" detail page is accessible
 
     Examples:
             | page          |
