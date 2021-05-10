@@ -1,3 +1,4 @@
+from time import sleep
 from behave import *
 from selenium.webdriver.common.by import By
 
@@ -20,6 +21,7 @@ def step_impl(context):
 
 @when(u'user confirms page deletion')
 def step_impl(context):
+    sleep(1.0)
     context.driver.find_element(By.CSS_SELECTOR, ".pattern-modal-buttons > #form-buttons-Delete").click()
 
 

@@ -2,12 +2,8 @@ from time import sleep
 from behave import fixture, use_fixture
 from selenium import webdriver
 from selenium.common.exceptions import WebDriverException
-from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
-from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.support import expected_conditions
-from selenium.webdriver.support.wait import WebDriverWait
 
 
 @fixture
@@ -26,7 +22,6 @@ def ensure_driver(context):
 @fixture
 def producent_login(context):
     context.driver.get(context.base_url)
-    sleep(0.1)
     context.driver.find_element(By.ID, "personaltools-login").click()
     context.driver.find_element(By.ID, "__ac_name").send_keys("admin")
     context.driver.find_element(By.ID, "__ac_password").send_keys("admin")
@@ -35,7 +30,6 @@ def producent_login(context):
 @fixture
 def producent_logout(context):
     context.driver.get(context.base_url)
-    sleep(0.1)
     context.driver.find_element(By.CSS_SELECTOR, "#portal-personaltools span:nth-child(2)").click()
     context.driver.find_element(By.ID, "personaltools-logout").click()
 
@@ -43,6 +37,7 @@ def producent_logout(context):
 def before_all(context):
     use_fixture(ensure_driver, context)
     use_fixture(producent_login, context)
+    sleep(0.6)
 
 def after_all(context):
     use_fixture(producent_logout, context)
