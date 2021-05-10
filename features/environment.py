@@ -44,9 +44,6 @@ def before_all(context):
     use_fixture(ensure_driver, context)
     use_fixture(producent_login, context)
 
-def before_scenario(context, scenario):
-    context.driver.get(context.base_url)
-
 def after_all(context):
     use_fixture(producent_logout, context)
     context.driver.quit()

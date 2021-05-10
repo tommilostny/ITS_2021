@@ -1,4 +1,6 @@
 from behave import *
+from selenium.webdriver.common.by import By
+
 
 @when(u'user clicks on "Actions" -> "Delete"')
 def step_impl(context):

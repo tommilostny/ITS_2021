@@ -1,4 +1,4 @@
-Feature: Add pages
+Feature: Delete pages
 
     Scenario Outline: Delete "<page>"
         Given producent user is at "<page>" detail page
