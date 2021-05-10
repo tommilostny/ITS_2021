@@ -20,7 +20,7 @@ def ensure_driver(context):
         context.driver = webdriver.Remote(
                 command_executor='http://localhost:4444/wd/hub',
                 desired_capabilities=DesiredCapabilities.CHROME)
-    context.driver.implicitly_wait(6)
+    context.driver.implicitly_wait(4)
     context.base_url = "http://localhost:8080/VALU3S"
 
 @fixture

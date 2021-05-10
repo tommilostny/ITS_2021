@@ -4,22 +4,22 @@ from selenium.webdriver.common.by import By
 
 @given(u'producent user is at "Organizations" detail page') #added page
 def step_impl(context):
-    context.driver.get(f"{context.base_url}/organisations/test-org/view")
+    context.driver.get(f"{context.base_url}/organisations/test-org")
 
 
 @given(u'producent user is at "Tools" detail page')
 def step_impl(context):
-    context.driver.get(f"{context.base_url}/tools/test-tool/view")
+    context.driver.get(f"{context.base_url}/tools/test-tool")
 
 
 @given(u'producent user is at "Methods" detail page')
 def step_impl(context):
-    context.driver.get(f"{context.base_url}/methods/test-method/view")
+    context.driver.get(f"{context.base_url}/methods/test-method")
 
 
 @given(u'producent user is at "Use Cases" detail page') #added use case
 def step_impl(context):
-    context.driver.get(f"{context.base_url}/use-cases/test-use-case-23/view")
+    context.driver.get(f"{context.base_url}/use-cases/test-use-case-23")
 
 
 @when(u'user clicks on "State" -> "Publish"')

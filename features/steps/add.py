@@ -2,7 +2,9 @@ from behave import *
 from selenium.webdriver.common.by import By
 
 
-def add_new_page_base(page:str, context):
+def add_new_page(page:str, context):
+    """ Po kliknutí na tlačítko "Add new..." občas dojde k přesměrování na http://localhost:8080/VALU3S/methods/folder_factories,
+        kde je výběr pomocí checkboxů. """
     context.driver.find_element(By.CSS_SELECTOR, ".icon-plone-contentmenu-factories").click()
     element = context.driver.find_elements(By.ID, page)
     if len(element):
@@ -15,7 +17,7 @@ def add_new_page_base(page:str, context):
 @given(u'producent user clicks on "Add new" -> "Organizations"')
 def step_impl(context):
     context.driver.get(f"{context.base_url}/organisations")
-    add_new_page_base("organization", context)
+    add_new_page("organization", context)
 
 
 @when(u'user enters required "Organizations" information')
@@ -39,7 +41,7 @@ def step_impl(context):
 @given(u'producent user clicks on "Add new" -> "Use Cases"')
 def step_impl(context):
     context.driver.get(f"{context.base_url}/use-cases")
-    add_new_page_base("use_case", context)
+    add_new_page("use_case", context)
 
 
 @when(u'user enters required "Use Cases" information')
@@ -61,7 +63,7 @@ def step_impl(context):
 @given(u'producent user clicks on "Add new" -> "Tools"')
 def step_impl(context):
     context.driver.get(f"{context.base_url}/tools")
-    add_new_page_base("tool", context)
+    add_new_page("tool", context)
 
 
 @when(u'user enters required "Tools" information')
@@ -95,7 +97,7 @@ def step_impl(context):
 @given(u'producent user clicks on "Add new" -> "Methods"')
 def step_impl(context):
     context.driver.get(f"{context.base_url}/methods")
-    add_new_page_base("method", context)
+    add_new_page("method", context)
 
 
 @when(u'user enters required "Methods" information')
